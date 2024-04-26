@@ -1,19 +1,16 @@
 while True:
-    # Step #1: Ask User for Calculation to Be Performed
     operation = input("Enter the operation you want to perform (add, subtract, multiply, divide): ")
 
-    # Step #2: Ask for Numbers, Alert Order Matters
     num1 = float(input("Enter the first number: "))
     num2 = float(input("Enter the second number: "))
 
-    # Step #3: Perform Operation and Print Result
     if operation == "add":
         result = num1 + num2
         print("Result:", result)
     elif operation == "subtract":
         result = num1 - num2
         print("Result:", result)
-    elif operation == "multiply":
+    elif operation == "multiply"add:
         result = num1 * num2
         print("Result:", result)
     elif operation == "divide":
@@ -25,7 +22,30 @@ while True:
     else:
         print("Error: Invalid operation")
     
-    # Ask if the user wants to perform another operation
-    choice = input("Do you want to perform another operation? (yes/no): ")
+    while True:
+        choice = input("Do you want to perform another operation on the result? (yes/no): ")
+        if choice.lower() == "yes":
+            new_operation = input("Enter the operation you want to perform (add, subtract, multiply, divide): ")
+            new_num = float(input("Enter the number: "))
+            if new_operation == "add":
+                result += new_num
+            elif new_operation == "subtract":
+                result -= new_num
+            elif new_operation == "multiply":
+                result *= new_num
+            elif new_operation == "divide":
+                if new_num == 0:
+                    print("Error: Cannot divide by zero")
+                else:
+                    result /= new_num
+            else:
+                print("Error: Invalid operation")
+            print("Result:", result)
+        elif choice.lower() == "no":
+            break
+        else:
+            print("Error: Invalid choice")
+    
+    choice = input("Do you want to perform another operation from scratch? (yes/no): ")
     if choice.lower() != "yes":
-        break
+        break 
