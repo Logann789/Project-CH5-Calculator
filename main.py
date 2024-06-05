@@ -10,7 +10,7 @@ while True:
     elif operation == "subtract":
         result = num1 - num2
         print("Result:", result)
-    elif operation == "multiply"add:
+    elif operation == "multiply":
         result = num1 * num2
         print("Result:", result)
     elif operation == "divide":
@@ -21,7 +21,8 @@ while True:
             print("Result:", result)
     else:
         print("Error: Invalid operation")
-    
+        continue
+
     while True:
         choice = input("Do you want to perform another operation on the result? (yes/no): ")
         if choice.lower() == "yes":
@@ -40,12 +41,12 @@ while True:
                     result /= new_num
             else:
                 print("Error: Invalid operation")
+                continue
             print("Result:", result)
         elif choice.lower() == "no":
             break
         else:
             print("Error: Invalid choice")
-    
     choice = input("Do you want to perform another operation from scratch? (yes/no): ")
     if choice.lower() != "yes":
-        break 
+        break
